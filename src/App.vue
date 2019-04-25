@@ -10,7 +10,14 @@
           </ul>
         </div>
         <div class="column chart">
+          <div class="row">
+            <div class="column">
           <h2>Who Might Die ⚔️</h2>
+            </div>
+            <div class="column">
+              <h2 v-if="loading">⚖️ Total Votes: {{totalVotes.characters_aggregate.aggregate.sum.votes}}</h2>
+            </div>
+          </div>
           <commit-chart 
           v-if="loaded"
           :chartData="chartData" />
@@ -22,7 +29,7 @@
 
 <script>
 import CommitChart from './components/CommitChart.js'
-import { ALL_CHAR_QUERY, ADD_VOTE_MUTATION, ALL_VOTES_SUBSCRIPTION } from './constants/graphql'
+import { ALL_CHAR_QUERY, ADD_VOTE_MUTATION, ALL_VOTES_SUBSCRIPTION, SUM_VOTES_SUBSCRIPTION } from './constants/graphql'
 import graphql2chartjs from 'graphql2chartjs';
 
 export default {
@@ -33,13 +40,14 @@ export default {
   data(){
     return {
       loaded: false,
+      loading: false,
       characters: '',
+      totalVotes: 0,
       chartData: null,
       options: {
             responsive: true,
             maintainAspectRatio: false
                 },
-      //_id: '',
     }
   },
   components: {
@@ -69,7 +77,17 @@ export default {
             g2c.add(data, 'bar')
             this.chartData = g2c.data
             this.loaded = true
-            console.log(g2c.data)
+            //console.log(g2c.data)
+          }
+        },
+        sumVotes: {
+          query: SUM_VOTES_SUBSCRIPTION,
+          result({data}) {
+            if(data){
+            this.totalVotes = data;
+            this.loading = true;
+            //console.log(data);
+            }
           }
         }
       },

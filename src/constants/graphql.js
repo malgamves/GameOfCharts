@@ -27,3 +27,25 @@ export const ALL_VOTES_SUBSCRIPTION = gql`
   }
   
 `;
+
+export const SUM_VOTES_SUBSCRIPTION = gql`
+subscription voteCount{
+  characters_aggregate {
+    aggregate {
+      sum {
+        votes
+      }
+    }
+  }
+}`;
+
+export const SUM_VOTES_QUERY = gql`
+query voteCount{
+  characters_aggregate {
+    aggregate {
+      sum {
+        votes
+      }
+    }
+  }
+}`;
