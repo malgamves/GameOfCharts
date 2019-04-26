@@ -1,5 +1,5 @@
-module.configuewWebpackexports = {
-  configuewWebpack: {
+module.exports = {
+  configureWebpack: {
     optimization: {
       splitChunks: {
         minSize: 10000,
