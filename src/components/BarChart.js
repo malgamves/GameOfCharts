@@ -1,4 +1,3 @@
-// CommitChart.js
 import { HorizontalBar, mixins } from 'vue-chartjs'
 const { reactiveProp } = mixins
 

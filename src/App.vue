@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import CommitChart from "./components/CommitChart.js";
+import BarChart from "./components/BarChart.js";
 import {
   ALL_CHAR_QUERY,
   ADD_VOTE_MUTATION,
@@ -45,21 +45,6 @@ export default {
     return {
       loaded: false,
       loading: false,
-      datacollection: {
-          //Data to be represented on x-axis
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-          datasets: [
-            {
-              label: 'Data One',
-              backgroundColor: '#f87979',
-              pointBackgroundColor: 'white',
-              borderWidth: 1,
-              pointBorderColor: '#249EBF',
-              //Data to be represented on y-axis
-              data: [40, 20, 30, 50, 90, 10, 20, 40, 50, 70, 90, 100]
-            }
-          ]
-        },
       characters: "",
       totalVotes: 0,
       chartData: null,
@@ -88,7 +73,7 @@ export default {
     };
   },
   components: {
-    CommitChart
+    BarChart
   },
   methods: {
     updateVotes(id) {
