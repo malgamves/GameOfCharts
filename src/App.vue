@@ -19,7 +19,7 @@
       <div>
         <div class="chart">
           
-          <commit-chart v-if="loaded" :chartData="chartData" :options="options" :width="200" :height="300"/>
+          <bar-chart v-if="loaded" :chartData="chartData" :options="options" :width="200" :height="300"/>
         </div>
       </div>
     </div>

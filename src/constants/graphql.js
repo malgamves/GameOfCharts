@@ -38,14 +38,3 @@ subscription voteCount{
     }
   }
 }`;
-
-export const SUM_VOTES_QUERY = gql`
-query voteCount{
-  characters_aggregate {
-    aggregate {
-      sum {
-        votes
-      }
-    }
-  }
-}`;
