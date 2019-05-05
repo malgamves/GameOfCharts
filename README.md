@@ -1,4 +1,14 @@
-# got-char-viz
+# Valar Viz
+
+Deaths Polling App for Game of Thrones characters.
+
+The App has: 
+
+📊 [Vue.js](https://vuejs.org/) + [Chartjs](https://www.chartjs.org/) on the frontend 🖥️
+
+😈 [Hasura](https://hasura.io/) + [Apollo GraphQL](https://www.apollographql.com/) in the backend ⚡
+
+🚀 Deployed on [Netlify](https://www.netlify.com/) 🔥
 
 ## Project setup
 ```
