@@ -13,7 +13,7 @@
           </div>
       <div class="button-box">
         <div v-for="charName of characters" v-bind:key="charName.id">
-          <button class="button" @click="updateVotes(charName.id)">{{charName.name}}</button>
+          <button class="button" @click.once="updateVotes(charName.id)">{{charName.name}}</button>
         </div>
       </div>
       <div>
